@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EssayPilot | 留学文书写作工作台</title>
+    <meta
+      name="description"
+      content="EssayPilot 是一个面向留学申请文书的写作工作台，帮助学生从素材整理、故事线搭建到院校定制完成整套写作流程。"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              paper: "#f7f3eb",
+              ink: "#1f2937",
+              moss: "#5c7457",
+              mossDark: "#495d45",
+              sand: "#ebe3d6",
+              clay: "#c46d3c",
+              slate: "#526071",
+            },
+            boxShadow: {
+              panel: "0 18px 45px rgba(31, 41, 55, 0.08)",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(196, 109, 60, 0.15), transparent 28%),
+          linear-gradient(180deg, #f9f6f0 0%, #f4efe6 100%);
+      }
+
+      .surface {
+        background: rgba(255, 255, 255, 0.78);
+        backdrop-filter: blur(12px);
+      }
+    </style>
+  </head>
+  <body class="min-h-screen text-ink">
+    <header class="sticky top-0 z-30 border-b border-stone-200/80 bg-[#f8f4ec]/90 backdrop-blur">
+      <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+        <div>
+          <div class="text-xl font-semibold tracking-tight">EssayPilot</div>
+          <div class="text-sm text-slate">留学文书写作工作台</div>
+        </div>
+        <nav class="hidden items-center gap-2 md:flex">
+          <a class="rounded-full px-4 py-2 text-sm text-slate transition hover:bg-stone-200/60" href="#overview">概览</a>
+          <a class="rounded-full px-4 py-2 text-sm text-slate transition hover:bg-stone-200/60" href="#workspace">工作台</a>
+          <a class="rounded-full px-4 py-2 text-sm text-slate transition hover:bg-stone-200/60" href="#schools">院校版本</a>
+          <a class="rounded-full px-4 py-2 text-sm text-slate transition hover:bg-stone-200/60" href="#pricing">定价</a>
+        </nav>
+        <div class="flex items-center gap-3">
+          <button class="rounded-full border border-stone-300 px-4 py-2 text-sm text-slate transition hover:bg-white">登录</button>
+          <button class="rounded-full bg-moss px-4 py-2 text-sm font-medium text-white transition hover:bg-mossDark">
+            免费开始
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="overview" class="mx-auto grid max-w-7xl gap-10 px-6 py-16 md:grid-cols-[1.1fr_0.9fr] md:py-24">
+        <div class="flex flex-col justify-center">
+          <div class="w-fit rounded-full border border-clay/20 bg-clay/10 px-3 py-1 text-xs font-medium text-clay">
+            英美硕士申请 | PS / SOP / RL
+          </div>
+          <h1 class="mt-6 max-w-4xl text-4xl font-semibold tracking-tight md:text-6xl">
+            把留学文书写作，从“不会写”变成“有流程地写好”
+          </h1>
+          <p class="mt-6 max-w-2xl text-base leading-8 text-slate md:text-lg">
+            EssayPilot 不是通用聊天框，而是一套专门为申请文书设计的工作流程：整理素材、确认故事线、逐段打磨、按学校定制，并在过程中持续给出结构和表达诊断。
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a class="rounded-full bg-moss px-5 py-3 text-sm font-medium text-white transition hover:bg-mossDark" href="#workspace">
+              查看工作台
+            </a>
+            <a class="rounded-full border border-stone-300 bg-white px-5 py-3 text-sm font-medium text-slate transition hover:bg-stone-50" href="#pricing">
+              查看定价
+            </a>
+          </div>
+          <div class="mt-10 grid max-w-2xl gap-4 sm:grid-cols-3">
+            <div class="surface rounded-2xl border border-stone-200 p-4 shadow-panel">
+              <div class="text-2xl font-semibold">4 步</div>
+              <div class="mt-1 text-sm text-slate">核心写作流程</div>
+            </div>
+            <div class="surface rounded-2xl border border-stone-200 p-4 shadow-panel">
+              <div class="text-2xl font-semibold">多版本</div>
+              <div class="mt-1 text-sm text-slate">院校项目定制</div>
+            </div>
+            <div class="surface rounded-2xl border border-stone-200 p-4 shadow-panel">
+              <div class="text-2xl font-semibold">可协作</div>
+              <div class="mt-1 text-sm text-slate">便于顾问 review</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="surface rounded-3xl border border-stone-200 p-5 shadow-panel">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <div class="text-sm font-medium text-slate">实时写作面板</div>
+              <div class="mt-1 text-lg font-semibold">Personal Statement Builder</div>
+            </div>
+            <span class="rounded-full bg-moss px-3 py-1 text-xs font-medium text-white">Live Demo</span>
+          </div>
+
+          <div class="mt-5 grid gap-4 md:grid-cols-2">
+            <div class="rounded-2xl bg-paper p-4">
+              <div class="text-sm font-medium text-slate">当前主故事线</div>
+              <div class="mt-2 text-xl font-semibold">数据分析驱动职业目标</div>
+              <p class="mt-2 text-sm leading-6 text-slate">
+                从数据分析实习切入，连接课程项目、研究兴趣和毕业后的产品分析方向，保证全文叙事有一条清晰主线。
+              </p>
+            </div>
+            <div class="rounded-2xl bg-paper p-4">
+              <div class="text-sm font-medium text-slate">文书健康度</div>
+              <div class="mt-2 text-xl font-semibold">84 / 100</div>
+              <p class="mt-2 text-sm leading-6 text-slate">
+                结构完整，但第二段证据仍不够具体，`why program` 还可以更贴近课程和 faculty 资源。
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-4 rounded-2xl border border-stone-200 p-4">
+            <div class="flex items-center justify-between">
+              <div class="text-sm font-medium text-slate">正在生成的大纲</div>
+              <div class="text-xs text-slate">v1.8</div>
+            </div>
+            <div class="mt-3 grid gap-3 text-sm">
+              <div class="rounded-xl bg-paper p-3">
+                <div class="font-medium">引子</div>
+                <div class="mt-1 text-slate">用一次真实的数据项目经历引出对数据科学的长期兴趣。</div>
+              </div>
+              <div class="rounded-xl bg-paper p-3">
+                <div class="font-medium">主体一</div>
+                <div class="mt-1 text-slate">课程与研究如何建立技术基础。</div>
+              </div>
+              <div class="rounded-xl bg-paper p-3">
+                <div class="font-medium">主体二</div>
+                <div class="mt-1 text-slate">实习如何帮助确认行业方向与问题意识。</div>
+              </div>
+              <div class="rounded-xl bg-paper p-3">
+                <div class="font-medium">结尾</div>
+                <div class="mt-1 text-slate">连接目标项目与中长期职业路径。</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="border-y border-stone-200/80 bg-white/50">
+        <div class="mx-auto max-w-7xl px-6 py-10">
+          <div class="grid gap-4 md:grid-cols-4">
+            <div class="rounded-2xl border border-stone-200 bg-white p-5">
+              <div class="text-sm text-slate">背景素材提取</div>
+              <div class="mt-2 text-lg font-semibold">问卷 + 标签归档</div>
+            </div>
+            <div class="rounded-2xl border border-stone-200 bg-white p-5">
+              <div class="text-sm text-slate">故事线搭建</div>
+              <div class="mt-2 text-lg font-semibold">职业目标与证据对齐</div>
+            </div>
+            <div class="rounded-2xl border border-stone-200 bg-white p-5">
+              <div class="text-sm text-slate">逐段写作</div>
+              <div class="mt-2 text-lg font-semibold">结构诊断与风格微调</div>
+            </div>
+            <div class="rounded-2xl border border-stone-200 bg-white p-5">
+              <div class="text-sm text-slate">院校定制</div>
+              <div class="mt-2 text-lg font-semibold">多版本管理与对比</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="workspace" class="mx-auto max-w-7xl px-6 py-14">
+        <div class="mb-8">
+          <div class="text-sm font-medium text-slate">Document Studio</div>
+          <h2 class="mt-1 text-3xl font-semibold tracking-tight">文书工作台</h2>
+          <p class="mt-2 max-w-3xl text-slate">
+            从素材、故事线到段落改写，把一篇文书拆成可以持续迭代的工作流。
+          </p>
+        </div>
+
+        <div class="grid gap-6 lg:grid-cols-[0.85fr_1.4fr_0.85fr]">
+          <aside class="surface rounded-3xl border border-stone-200 p-5 shadow-panel">
+            <div class="text-lg font-semibold">素材面板</div>
+            <div class="mt-4 space-y-3 text-sm">
+              <div class="rounded-2xl bg-paper p-3 leading-6">GPA 3.82 / 4.0，统计学与编程课程表现突出。</div>
+              <div class="rounded-2xl bg-paper p-3 leading-6">互联网公司数据分析实习，参与用户增长项目。</div>
+              <div class="rounded-2xl bg-paper p-3 leading-6">完成推荐系统课程项目，并输出研究报告。</div>
+              <div class="rounded-2xl bg-paper p-3 leading-6">职业目标：做数据驱动的产品分析和决策支持。</div>
+            </div>
+            <button class="mt-4 w-full rounded-full border border-stone-300 px-4 py-2 text-sm text-slate transition hover:bg-white">
+              编辑背景问卷
+            </button>
+          </aside>
+
+          <main class="surface rounded-3xl border border-stone-200 p-5 shadow-panel">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <div class="text-lg font-semibold">PS Draft Editor</div>
+                <div class="mt-1 text-sm text-slate">UCL 版本 | v2.3</div>
+              </div>
+              <span class="rounded-full bg-moss px-3 py-1 text-xs font-medium text-white">Auto Saved</span>
+            </div>
+            <div class="mt-5 rounded-2xl border border-stone-200 bg-paper p-4">
+              <div class="text-sm font-medium text-slate">当前段落</div>
+              <textarea
+                class="mt-3 min-h-[340px] w-full resize-none rounded-2xl border-0 bg-white p-4 text-sm leading-7 text-slate outline-none ring-1 ring-stone-200 focus:ring-2 focus:ring-moss/30"
+              >During my internship in data analytics, I began to see that effective decision-making depends not only on intuition, but on the ability to transform messy user behavior into actionable insights. That realization pushed me to strengthen my foundation in statistical reasoning, machine learning, and product-oriented problem solving.</textarea>
+              <div class="mt-4 flex flex-wrap gap-3">
+                <button class="rounded-full bg-moss px-4 py-2 text-sm font-medium text-white transition hover:bg-mossDark">继续改写这一段</button>
+                <button class="rounded-full border border-stone-300 px-4 py-2 text-sm text-slate transition hover:bg-white">让语气更自然</button>
+                <button class="rounded-full border border-stone-300 px-4 py-2 text-sm text-slate transition hover:bg-white">加强项目匹配度</button>
+              </div>
+            </div>
+          </main>
+
+          <aside class="surface rounded-3xl border border-stone-200 p-5 shadow-panel">
+            <div class="text-lg font-semibold">诊断结果</div>
+            <div class="mt-4 space-y-3 text-sm">
+              <div class="rounded-2xl bg-paper p-3">
+                <div class="font-medium">结构</div>
+                <div class="mt-1 leading-6 text-slate">引子清晰，但第二段和第三段之间的衔接还可以再加强。</div>
+              </div>
+              <div class="rounded-2xl bg-paper p-3">
+                <div class="font-medium">证据</div>
+                <div class="mt-1 leading-6 text-slate">实习例子具体，但科研经历的细节仍然偏少。</div>
+              </div>
+              <div class="rounded-2xl bg-paper p-3">
+                <div class="font-medium">风格</div>
+                <div class="mt-1 leading-6 text-slate">整体自然，但个别句子仍然略抽象。</div>
+              </div>
+              <div class="rounded-2xl bg-paper p-3">
+                <div class="font-medium">匹配度</div>
+                <div class="mt-1 leading-6 text-slate">还可以更具体地连接 UCL 的课程设置和研究环境。</div>
+              </div>
+            </div>
+            <button class="mt-4 w-full rounded-full border border-stone-300 px-4 py-2 text-sm text-slate transition hover:bg-white">
+              重新诊断全文
+            </button>
+          </aside>
+        </div>
+      </section>
+
+      <section id="schools" class="mx-auto max-w-7xl px-6 py-14">
+        <div class="mb-8">
+          <div class="text-sm font-medium text-slate">School Versions</div>
+          <h2 class="mt-1 text-3xl font-semibold tracking-tight">院校版本管理</h2>
+          <p class="mt-2 max-w-3xl text-slate">
+            同一份素材，生成适配不同院校与项目的版本，并追踪每个版本的完成度。
+          </p>
+        </div>
+
+        <div class="grid gap-4 lg:grid-cols-3">
+          <article class="surface rounded-3xl border border-stone-200 p-5 shadow-panel">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <div class="text-lg font-semibold">UCL</div>
+                <div class="mt-1 text-sm text-slate">MSc Data Science</div>
+              </div>
+              <span class="rounded-full bg-paper px-3 py-1 text-xs font-medium text-slate">v2.3</span>
+            </div>
+            <p class="mt-4 text-sm leading-6 text-slate">强调跨学科课程、伦敦行业环境和数据产品应用场景。</p>
+            <div class="mt-4">
+              <div class="mb-2 flex items-center justify-between text-sm">
+                <span class="text-slate">当前匹配度</span>
+                <span class="font-medium">88%</span>
+              </div>
+              <div class="h-2 rounded-full bg-stone-200"><div class="h-2 rounded-full bg-moss" style="width: 88%"></div></div>
+            </div>
+          </article>
+
+          <article class="surface rounded-3xl border border-stone-200 p-5 shadow-panel">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <div class="text-lg font-semibold">CMU</div>
+                <div class="mt-1 text-sm text-slate">MS Information Systems</div>
+              </div>
+              <span class="rounded-full bg-paper px-3 py-1 text-xs font-medium text-slate">v1.6</span>
+            </div>
+            <p class="mt-4 text-sm leading-6 text-slate">强调产品化思维、系统设计能力和技术管理路径。</p>
+            <div class="mt-4">
+              <div class="mb-2 flex items-center justify-between text-sm">
+                <span class="text-slate">当前匹配度</span>
+                <span class="font-medium">81%</span>
+              </div>
+              <div class="h-2 rounded-full bg-stone-200"><div class="h-2 rounded-full bg-moss" style="width: 81%"></div></div>
+            </div>
+          </article>
+
+          <article class="surface rounded-3xl border border-stone-200 p-5 shadow-panel">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <div class="text-lg font-semibold">LSE</div>
+                <div class="mt-1 text-sm text-slate">MSc Management</div>
+              </div>
+              <span class="rounded-full bg-paper px-3 py-1 text-xs font-medium text-slate">v1.2</span>
+            </div>
+            <p class="mt-4 text-sm leading-6 text-slate">强调商业分析视角、国际化环境和长线职业规划。</p>
+            <div class="mt-4">
+              <div class="mb-2 flex items-center justify-between text-sm">
+                <span class="text-slate">当前匹配度</span>
+                <span class="font-medium">74%</span>
+              </div>
+              <div class="h-2 rounded-full bg-stone-200"><div class="h-2 rounded-full bg-moss" style="width: 74%"></div></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="pricing" class="mx-auto max-w-7xl px-6 py-14">
+        <div class="mb-8 text-center">
+          <div class="text-sm font-medium text-slate">Pricing</div>
+          <h2 class="mt-1 text-3xl font-semibold tracking-tight">先验证需求，再做精细化定价</h2>
+          <p class="mt-2 text-slate">当前页面展示的是一套适合留学文书产品早期验证的套餐结构。</p>
+        </div>
+
+        <div class="grid gap-4 lg:grid-cols-3">
+          <div class="surface rounded-3xl border border-stone-200 p-6 shadow-panel">
+            <div class="text-xl font-semibold">Starter</div>
+            <div class="mt-3 text-3xl font-semibold">￥79</div>
+            <p class="mt-3 text-sm leading-6 text-slate">适合先生成第一版 PS / SOP 的用户。</p>
+            <div class="mt-5 space-y-3 text-sm text-slate">
+              <div class="rounded-2xl bg-paper px-3 py-2">1 个申请项目</div>
+              <div class="rounded-2xl bg-paper px-3 py-2">PS / SOP 初稿</div>
+              <div class="rounded-2xl bg-paper px-3 py-2">基础结构诊断</div>
+              <div class="rounded-2xl bg-paper px-3 py-2">导出 PDF</div>
+            </div>
+          </div>
+
+          <div class="rounded-3xl border border-moss bg-moss p-6 text-white shadow-panel">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <div class="text-xl font-semibold">Standard</div>
+                <div class="mt-3 text-3xl font-semibold">￥199</div>
+              </div>
+              <span class="rounded-full bg-white/15 px-3 py-1 text-xs font-medium">推荐</span>
+            </div>
+            <p class="mt-3 text-sm leading-6 text-stone-100">适合正式申请季持续迭代多个版本。</p>
+            <div class="mt-5 space-y-3 text-sm">
+              <div class="rounded-2xl bg-white/10 px-3 py-2">5 个院校版本</div>
+              <div class="rounded-2xl bg-white/10 px-3 py-2">逐段改写</div>
+              <div class="rounded-2xl bg-white/10 px-3 py-2">空泛表达与 AI 痕迹检查</div>
+              <div class="rounded-2xl bg-white/10 px-3 py-2">推荐信草稿辅助</div>
+            </div>
+          </div>
+
+          <div class="surface rounded-3xl border border-stone-200 p-6 shadow-panel">
+            <div class="text-xl font-semibold">Pro Review</div>
+            <div class="mt-3 text-3xl font-semibold">￥699</div>
+            <p class="mt-3 text-sm leading-6 text-slate">适合追求更强交付质量和顾问协作的用户。</p>
+            <div class="mt-5 space-y-3 text-sm text-slate">
+              <div class="rounded-2xl bg-paper px-3 py-2">无限版本</div>
+              <div class="rounded-2xl bg-paper px-3 py-2">顾问 review 入口</div>
+              <div class="rounded-2xl bg-paper px-3 py-2">精修建议</div>
+              <div class="rounded-2xl bg-paper px-3 py-2">优先支持</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
